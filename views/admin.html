@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow"><meta name="color-scheme" content="dark"><link rel="icon" href="data:,">
+<title>Публичные ссылки - управление</title><link rel="stylesheet" href="/assets/style.css"></head>
+<body class="adm">
+<main class="wrap">
+  <header class="head"><span class="dot up"></span>
+    <div class="head__txt"><h1>Публичные ссылки</h1><div class="sub">Кому отправить ссылку, тот увидит страницу статуса одного монитора</div></div>
+    <button type="button" class="btn" id="logout" hidden>Выйти</button></header>
+
+  <section class="panel narrow" id="loginBox" hidden>
+    <h2>Вход</h2>
+    <form id="loginForm" autocomplete="off"><label class="fld">Пароль
+      <input type="password" id="pw" autocomplete="current-password" required></label>
+      <div class="err" id="loginErr"></div><button class="btn btn--pri" type="submit">Войти</button></form>
+  </section>
+
+  <div id="main" hidden>
+    <section class="panel">
+      <h2>Новая ссылка</h2>
+      <form id="createForm" class="form">
+        <label class="fld">Монитор<select id="monSel" required></select></label>
+        <label class="fld"><span>Название на странице <span class="dim">(необязательно)</span></span>
+          <input type="text" id="label" maxlength="80" placeholder="по умолчанию - имя монитора"></label>
+        <fieldset class="checks"><legend>Скрыть от посторонних</legend>
+          <label><input type="checkbox" id="hUrl" checked> Адрес сайта</label>
+          <label><input type="checkbox" id="hErr" checked> Тексты ошибок и диагностику</label>
+          <label><input type="checkbox" id="hRec" checked> Автоперезапуск и деплой</label>
+        </fieldset>
+        <div class="err" id="createErr"></div>
+        <button class="btn btn--pri" type="submit">Создать ссылку</button>
+      </form>
+    </section>
+    <section class="panel"><h2>Ссылки</h2><div id="links"></div></section>
+  </div>
+</main>
+<div class="toast" id="toast" hidden></div>
+<script src="/assets/admin.js"></script>
+</body></html>
